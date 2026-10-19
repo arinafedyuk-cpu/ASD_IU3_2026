@@ -7,7 +7,7 @@ on:
     paths:
       - '31-Fedyuk/**'
       - 'pom.xml'
-      - '.github/workflows/lab01-fedyuk-31.yml' 
+      - '.github/workflows/lab01-fedyuk-31.yml'
 
 permissions:
   contents: read
