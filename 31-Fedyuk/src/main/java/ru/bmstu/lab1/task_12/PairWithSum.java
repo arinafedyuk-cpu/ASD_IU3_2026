@@ -1,3 +1,11 @@
+/*
+ * Задача 12. Пара с заданной суммой.
+ * Вход: массив из n целых чисел и число s.
+ * Выход: индексы i < j, для которых a_i + a_j = s. Если пар несколько — вывести пару с наименьшим i, а
+ * при равенстве — с наименьшим j. Если пары нет — вывести -1 -1.
+ * Ограничения: 1 < n < 10^5; элементы имеют тип int.
+ * Сложность: средняя
+ */
 package ru.bmstu.lab1.task_12;
 
 import java.util.Arrays;
@@ -6,10 +14,16 @@ import java.util.Scanner;
 import ru.bmstu.lab1.common.ConsoleIo;
 
 /** Задача 12. Пара с заданной суммой: найти i < j, минимизируя сначала i, затем j. */
-public final class Task12 {
-    private Task12() {}
+public final class PairWithSum {
+    private PairWithSum() {}
 
-    /** Возвращает индексы требуемой пары или {-1, -1}, не изменяя входной массив. */
+    /**
+     * Возвращает индексы требуемой пары или {-1, -1}, не изменяя входной массив.
+     *
+     * @param values массив, удовлетворяющий ограничениям задачи
+     * @param targetSum требуемая сумма двух элементов
+     * @return результат решения задачи
+     */
     public static int[] solve(int[] values, long targetSum) {
         IndexedElement[] sorted = new IndexedElement[values.length];
         for (int index = 0; index < values.length; index++) {
@@ -47,11 +61,19 @@ public final class Task12 {
         return left;
     }
 
-    /** Читает данные из стандартного ввода и печатает только ответ задачи. */
+    /**
+     * Запрашивает входные данные и выводит результат или сообщение об ошибке.
+     *
+     * @param args не используются
+     */
     public static void main(String[] args) {
         try (Scanner scanner = new Scanner(System.in)) {
             int[] values = ConsoleIo.readArray(scanner);
-            System.out.println(ConsoleIo.format(solve(values, scanner.nextLong())));
+            System.out.println(
+                    ConsoleIo.format(
+                            solve(values, ConsoleIo.readLong(scanner, "Введите сумму s"))));
+        } catch (IllegalArgumentException exception) {
+            System.out.println("Ошибка: " + exception.getMessage());
         }
     }
 }

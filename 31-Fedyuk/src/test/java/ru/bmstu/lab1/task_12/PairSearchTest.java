@@ -24,7 +24,7 @@ class PairSearchTest {
             }
             long target = random.nextInt(RANDOM_VALUE_BOUND) - RANDOM_VALUE_OFFSET;
             int[] original = values.clone();
-            assertArrayEquals(bruteForce(values, target), Task12.solve(values, target));
+            assertArrayEquals(bruteForce(values, target), PairWithSum.solve(values, target));
             assertArrayEquals(original, values);
         }
     }
@@ -35,12 +35,12 @@ class PairSearchTest {
         for (int index = 0; index < values.length; index++) {
             values[index] = index;
         }
-        assertArrayEquals(new int[] {-1, -1}, Task12.solve(values, -1));
+        assertArrayEquals(new int[] {-1, -1}, PairWithSum.solve(values, -1));
     }
 
     @Test
     void shouldChooseFirstTwoIndicesAmongManyEqualElements() {
-        assertArrayEquals(new int[] {0, 1}, Task12.solve(new int[MAX_VALID_SIZE], 0));
+        assertArrayEquals(new int[] {0, 1}, PairWithSum.solve(new int[MAX_VALID_SIZE], 0));
     }
 
     @Test
@@ -49,7 +49,7 @@ class PairSearchTest {
         values[values.length - 2] = 1;
         values[values.length - 1] = 2;
         assertArrayEquals(
-                new int[] {values.length - 2, values.length - 1}, Task12.solve(values, 3));
+                new int[] {values.length - 2, values.length - 1}, PairWithSum.solve(values, 3));
     }
 
     private static int[] bruteForce(int[] values, long target) {
