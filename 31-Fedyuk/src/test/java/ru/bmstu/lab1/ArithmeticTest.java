@@ -8,9 +8,9 @@ import java.util.Arrays;
 import java.util.Random;
 import org.junit.jupiter.api.Test;
 import ru.bmstu.lab1.common.ConsoleIo;
-import ru.bmstu.lab1.task_25.Task25;
-import ru.bmstu.lab1.task_26.Task26;
-import ru.bmstu.lab1.task_36.Task36;
+import ru.bmstu.lab1.task_25.ArraySum;
+import ru.bmstu.lab1.task_26.ModularProduct;
+import ru.bmstu.lab1.task_36.RunningSum;
 
 /** Проверки разрядности сумм и произведения независимым вычислением через BigInteger. */
 class ArithmeticTest {
@@ -24,7 +24,7 @@ class ArithmeticTest {
     void shouldSumLargestAllowedArrayWithoutOverflow() {
         int[] values = new int[MAX_VALID_SIZE];
         Arrays.fill(values, Integer.MAX_VALUE);
-        assertEquals((long) MAX_VALID_SIZE * Integer.MAX_VALUE, Task25.solve(values));
+        assertEquals((long) MAX_VALID_SIZE * Integer.MAX_VALUE, ArraySum.solve(values));
     }
 
     @Test
@@ -38,7 +38,7 @@ class ArithmeticTest {
                 values[index] = random.nextInt();
                 exactProduct = exactProduct.multiply(BigInteger.valueOf(values[index]));
             }
-            assertEquals(exactProduct.mod(modulus).longValueExact(), Task26.solve(values));
+            assertEquals(exactProduct.mod(modulus).longValueExact(), ModularProduct.solve(values));
         }
     }
 
@@ -47,7 +47,7 @@ class ArithmeticTest {
         int[] values = new int[MAX_VALID_SIZE];
         Arrays.fill(values, (int) MODULUS - 1);
         // Нечётная степень -1 равна -1 по модулю MODULUS.
-        assertEquals(MODULUS - 1, Task26.solve(values));
+        assertEquals(MODULUS - 1, ModularProduct.solve(values));
     }
 
     @Test
@@ -59,7 +59,7 @@ class ArithmeticTest {
         for (int index = 0; index < expected.length; index++) {
             expected[index] = (index + 1L) * Integer.MIN_VALUE;
         }
-        assertArrayEquals(expected, Task36.solve(values));
+        assertArrayEquals(expected, RunningSum.solve(values));
         assertArrayEquals(original, values);
     }
 

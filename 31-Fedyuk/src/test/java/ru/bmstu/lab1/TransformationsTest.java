@@ -5,9 +5,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import java.util.Arrays;
 import java.util.Random;
 import org.junit.jupiter.api.Test;
-import ru.bmstu.lab1.task_37.Task37;
-import ru.bmstu.lab1.task_38.Task38;
-import ru.bmstu.lab1.task_41.Task41;
+import ru.bmstu.lab1.task_37.ArrayReverse;
+import ru.bmstu.lab1.task_38.LeftRotation;
+import ru.bmstu.lab1.task_41.RemoveElement;
 
 /** Проверки изменения массива на месте, большого размера и порядка оставшихся элементов. */
 class TransformationsTest {
@@ -24,9 +24,9 @@ class TransformationsTest {
         for (int index = 0; index < values.length; index++) {
             expected[index] = values.length - index - 1;
         }
-        Task37.solve(values);
+        ArrayReverse.solve(values);
         assertArrayEquals(expected, values);
-        Task37.solve(values);
+        ArrayReverse.solve(values);
         assertArrayEquals(original, values);
     }
 
@@ -47,7 +47,7 @@ class TransformationsTest {
                 }
                 expected[index] = values[source];
             }
-            Task38.solve(values, distance);
+            LeftRotation.solve(values, distance);
             assertArrayEquals(expected, values);
         }
     }
@@ -59,7 +59,7 @@ class TransformationsTest {
         for (int index = 0; index < values.length - 1; index++) {
             expected[index] = index + 1;
         }
-        Task38.solve(values, MAX_VALID_SIZE + 1);
+        LeftRotation.solve(values, MAX_VALID_SIZE + 1);
         assertArrayEquals(expected, values);
     }
 
@@ -67,14 +67,14 @@ class TransformationsTest {
     void shouldRemoveAllMatchesFromLargestArray() {
         int[] values = new int[MAX_VALID_SIZE];
         Arrays.fill(values, 7);
-        assertArrayEquals(new int[0], Task41.solve(values, 7));
+        assertArrayEquals(new int[0], RemoveElement.solve(values, 7));
     }
 
     @Test
     void shouldPreserveOrderAndInputWhenRemovingValue() {
         int[] values = {3, 1, 3, -2, 3, 1};
         int[] original = values.clone();
-        assertArrayEquals(new int[] {1, -2, 1}, Task41.solve(values, 3));
+        assertArrayEquals(new int[] {1, -2, 1}, RemoveElement.solve(values, 3));
         assertArrayEquals(original, values);
     }
 

@@ -3,13 +3,13 @@ package ru.bmstu.lab1.common;
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
-import static ru.bmstu.lab1.support.ConsoleAssertions.assertOutput;
+import static ru.bmstu.lab1.support.ConsoleAssertions.assertResult;
 
 import java.util.Scanner;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import ru.bmstu.lab1.task_3.Task3;
+import ru.bmstu.lab1.task_3.OccurrenceCount;
 
 /** Проверки ограничений и общего ввода-вывода. */
 class ConsoleIoTest {
@@ -38,6 +38,6 @@ class ConsoleIoTest {
     @Test
     void shouldReadLargestPermittedArrayThroughConsole() {
         String input = MAX_VALID_SIZE + "\n" + "7 ".repeat(MAX_VALID_SIZE) + "\n7\n";
-        assertOutput(input, MAX_VALID_SIZE + "\n", Task3::main);
+        assertResult(input, MAX_VALID_SIZE + "\n", "Введите x", OccurrenceCount::main);
     }
 }
