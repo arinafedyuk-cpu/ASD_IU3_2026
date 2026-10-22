@@ -13,6 +13,21 @@ import java.util.function.Consumer;
 public final class ConsoleAssertions {
     private ConsoleAssertions() {}
 
+    /** Сравнивает подсказки и результат программы без дополнительного параметра. */
+    public static void assertResult(String input, String expected, Consumer<String[]> program) {
+        assertResult(input, expected, "", program);
+    }
+
+    /** Сравнивает все подсказки и результат программы с дополнительным параметром. */
+    public static void assertResult(
+            String input, String expected, String parameterPrompt, Consumer<String[]> program) {
+        String prompts = "Введите длину массива\nВведите массив\n";
+        if (!parameterPrompt.isEmpty()) {
+            prompts += parameterPrompt + "\n";
+        }
+        assertOutput(input, prompts + expected, program);
+    }
+
     /** Запускает main с заданным вводом и сравнивает весь вывод, включая пустые строки. */
     public static void assertOutput(String input, String expected, Consumer<String[]> program) {
         InputStream originalInput = System.in;
