@@ -1,6 +1,7 @@
 package ru.bmstu.lab1.common;
 
 import java.util.Scanner;
+import java.util.StringJoiner;
 
 /** Общие операции чтения массива и форматирования ответа для задач лабораторной. */
 public final class ConsoleIo {
@@ -30,6 +31,15 @@ public final class ConsoleIo {
                 result.append(' ');
             }
             result.append(values[index]);
+        }
+        return result.toString();
+    }
+
+    /** Форматирует суммы типа long через пробел, включая значения вне диапазона int. */
+    public static String format(long[] values) {
+        StringJoiner result = new StringJoiner(" ");
+        for (long value : values) {
+            result.add(Long.toString(value));
         }
         return result.toString();
     }
