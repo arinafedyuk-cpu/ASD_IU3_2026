@@ -1,149 +1,135 @@
 # Лабораторная работа №1
 
-**Выполнила:** Федюк Арина Дмитриевна
+Федюк Арина Дмитриевна, ИУ3-31Б.
 
-**Группа:** ИУ3-31Б
-
-Решены **18 задач на 24 балла по таблице задания**:
+Решены 18 задач на **24 балла по таблице задания**:
 
 - №1–12 — по 1 баллу, всего 12.
 - №25, 26, 36, 37, 38, 41 — по 2 балла, ещё 12.
 
-## Состав
+## Файлы задач
 
-- `src/main/java/ru/bmstu/lab1/task_<номер>` — отдельный пакет для каждой выбранной задачи.
-- `src/main/java/ru/bmstu/lab1/common` — общий ввод, форматирование ответа и разворот участка массива.
-- `src/test/java` — JUnit 5: примеры, граничные случаи, консольные и нагрузочные проверки.
-- `report.md` — идеи решений и ручные примеры.
-- `complexity.md` — отдельный расчёт времени и памяти.
-- `config/checkstyle.xml` — автоматическая проверка стиля.
+Для каждой задачи есть класс с понятным именем, условие в начале файла, Javadoc,
+отдельный файл тестов и небольшой README с идеей, временем и памятью.
 
-Требуются **JDK 21 или новее** и **Maven 3.9.x**. Для сборки всего исходного репозитория
-курса требуется JDK 25: демонстрационный модуль преподавателя использует Java 25.
-Данный модуль сам по себе совместим с Java 21.
+| № | Решение | Тесты | Описание |
+|---|---|---|---|
+| 1 | [MinMax.java](src/main/java/ru/bmstu/lab1/task_1/MinMax.java) | [MinMaxTest.java](src/test/java/ru/bmstu/lab1/task_1/MinMaxTest.java) | [README](src/main/java/ru/bmstu/lab1/task_1/README.md) |
+| 2 | [FirstOccurrence.java](src/main/java/ru/bmstu/lab1/task_2/FirstOccurrence.java) | [FirstOccurrenceTest.java](src/test/java/ru/bmstu/lab1/task_2/FirstOccurrenceTest.java) | [README](src/main/java/ru/bmstu/lab1/task_2/README.md) |
+| 3 | [OccurrenceCount.java](src/main/java/ru/bmstu/lab1/task_3/OccurrenceCount.java) | [OccurrenceCountTest.java](src/test/java/ru/bmstu/lab1/task_3/OccurrenceCountTest.java) | [README](src/main/java/ru/bmstu/lab1/task_3/README.md) |
+| 4 | [AllIndices.java](src/main/java/ru/bmstu/lab1/task_4/AllIndices.java) | [AllIndicesTest.java](src/test/java/ru/bmstu/lab1/task_4/AllIndicesTest.java) | [README](src/main/java/ru/bmstu/lab1/task_4/README.md) |
+| 5 | [EvenIndexSum.java](src/main/java/ru/bmstu/lab1/task_5/EvenIndexSum.java) | [EvenIndexSumTest.java](src/test/java/ru/bmstu/lab1/task_5/EvenIndexSumTest.java) | [README](src/main/java/ru/bmstu/lab1/task_5/README.md) |
+| 6 | [AboveAverageCount.java](src/main/java/ru/bmstu/lab1/task_6/AboveAverageCount.java) | [AboveAverageCountTest.java](src/test/java/ru/bmstu/lab1/task_6/AboveAverageCountTest.java) | [README](src/main/java/ru/bmstu/lab1/task_6/README.md) |
+| 7 | [SecondMaximum.java](src/main/java/ru/bmstu/lab1/task_7/SecondMaximum.java) | [SecondMaximumTest.java](src/test/java/ru/bmstu/lab1/task_7/SecondMaximumTest.java) | [README](src/main/java/ru/bmstu/lab1/task_7/README.md) |
+| 8 | [SignFilter.java](src/main/java/ru/bmstu/lab1/task_8/SignFilter.java) | [SignFilterTest.java](src/test/java/ru/bmstu/lab1/task_8/SignFilterTest.java) | [README](src/main/java/ru/bmstu/lab1/task_8/README.md) |
+| 9 | [SortedCheck.java](src/main/java/ru/bmstu/lab1/task_9/SortedCheck.java) | [SortedCheckTest.java](src/test/java/ru/bmstu/lab1/task_9/SortedCheckTest.java) | [README](src/main/java/ru/bmstu/lab1/task_9/README.md) |
+| 10 | [LastMultiple.java](src/main/java/ru/bmstu/lab1/task_10/LastMultiple.java) | [LastMultipleTest.java](src/test/java/ru/bmstu/lab1/task_10/LastMultipleTest.java) | [README](src/main/java/ru/bmstu/lab1/task_10/README.md) |
+| 11 | [ClosestToAverage.java](src/main/java/ru/bmstu/lab1/task_11/ClosestToAverage.java) | [ClosestToAverageTest.java](src/test/java/ru/bmstu/lab1/task_11/ClosestToAverageTest.java) | [README](src/main/java/ru/bmstu/lab1/task_11/README.md) |
+| 12 | [PairWithSum.java](src/main/java/ru/bmstu/lab1/task_12/PairWithSum.java) | [PairWithSumTest.java](src/test/java/ru/bmstu/lab1/task_12/PairWithSumTest.java) | [README](src/main/java/ru/bmstu/lab1/task_12/README.md) |
+| 25 | [ArraySum.java](src/main/java/ru/bmstu/lab1/task_25/ArraySum.java) | [ArraySumTest.java](src/test/java/ru/bmstu/lab1/task_25/ArraySumTest.java) | [README](src/main/java/ru/bmstu/lab1/task_25/README.md) |
+| 26 | [ModularProduct.java](src/main/java/ru/bmstu/lab1/task_26/ModularProduct.java) | [ModularProductTest.java](src/test/java/ru/bmstu/lab1/task_26/ModularProductTest.java) | [README](src/main/java/ru/bmstu/lab1/task_26/README.md) |
+| 36 | [RunningSum.java](src/main/java/ru/bmstu/lab1/task_36/RunningSum.java) | [RunningSumTest.java](src/test/java/ru/bmstu/lab1/task_36/RunningSumTest.java) | [README](src/main/java/ru/bmstu/lab1/task_36/README.md) |
+| 37 | [ArrayReverse.java](src/main/java/ru/bmstu/lab1/task_37/ArrayReverse.java) | [ArrayReverseTest.java](src/test/java/ru/bmstu/lab1/task_37/ArrayReverseTest.java) | [README](src/main/java/ru/bmstu/lab1/task_37/README.md) |
+| 38 | [LeftRotation.java](src/main/java/ru/bmstu/lab1/task_38/LeftRotation.java) | [LeftRotationTest.java](src/test/java/ru/bmstu/lab1/task_38/LeftRotationTest.java) | [README](src/main/java/ru/bmstu/lab1/task_38/README.md) |
+| 41 | [RemoveElement.java](src/main/java/ru/bmstu/lab1/task_41/RemoveElement.java) | [RemoveElementTest.java](src/test/java/ru/bmstu/lab1/task_41/RemoveElementTest.java) | [README](src/main/java/ru/bmstu/lab1/task_41/README.md) |
 
-## Проверка
+Общие операции чтения и вывода находятся в `common/ConsoleIo.java`,
+разворот участка массива — в `common/ArrayReversal.java`.
+Вспомогательные методы и тесты позволяют не повторять один и тот же код в 18 файлах.
 
-Из корня репозитория перейдите в свой модуль:
+## Сборка и проверка
+
+Требуются JDK 21 или новее и Maven 3.9.x. Для сборки демонстрационного модуля
+преподавателя нужен JDK 25; свой модуль можно проверять отдельно на JDK 21.
+
+Из корня репозитория:
+
+```sh
+mvn -pl 31-Fedyuk clean verify
+```
+
+Или из папки модуля:
 
 ```sh
 cd 31-Fedyuk
-```
-
-Затем выполните:
-
-```sh
-java -version
-mvn -version
 mvn clean test
 mvn clean verify
 ```
 
-`test` проверяет форматирование, Checkstyle и запускает тесты. `verify` дополнительно
-создаёт отчёт JaCoCo и требует не менее 80% покрытия строк и ветвей.
-HTML-отчёт: `target/site/jacoco/index.html`. Проверяется весь основной код, без исключения
-консольных точек входа или вспомогательных классов из покрытия.
+`test` запускает тесты, Spotless и Checkstyle. `verify` дополнительно формирует JaCoCo
+и требует не менее 80% покрытия строк и ветвей. Отчёт: `target/site/jacoco/index.html`.
+Проверяется весь основной код, включая ввод-вывод и обработку ошибок.
 
-Если после изменения кода форматирование не проходит:
+Форматирование — Google Java Format в режиме AOSP с требуемым отступом 4 пробела.
+После изменения кода можно выполнить `mvn spotless:apply`, затем `mvn clean verify`.
 
-```sh
-mvn spotless:apply
-mvn clean verify
-```
+## Запуск
 
-Spotless использует Google Java Format в режиме AOSP с отступом 4 пробела: в правилах
-преподавателя явно требуются именно 4 пробела. Checkstyle также проверяет длину строки
-до 120 символов, отсутствие wildcard-импортов, имена, Javadoc и длину методов.
-
-## Запуск задания
-
-После успешной сборки:
+Из папки `31-Fedyuk` после сборки:
 
 ```sh
-java -cp target/classes ru.bmstu.lab1.task_1.Task1
+java -cp target/classes ru.bmstu.lab1.task_1.MinMax
 ```
 
-Введите размер массива и его элементы:
+Пример диалога: строки с числами `5` и `3 -1 9 0 4` вводятся с клавиатуры.
 
 ```text
+Введите длину массива
 5
+Введите массив
 3 -1 9 0 4
-```
-
-Ответ:
-
-```text
 -1 9
 ```
 
-Для другого задания замените **оба** номера, например:
+Для другой задачи выберите пакет и имя класса из таблицы, например:
 
 ```sh
-java -cp target/classes ru.bmstu.lab1.task_12.Task12
+java -cp target/classes ru.bmstu.lab1.task_38.LeftRotation
 ```
 
-Ввод задачи 12:
+Можно передавать данные из файла:
+
+```sh
+java -cp target/classes ru.bmstu.lab1.task_12.PairWithSum < input.txt
+```
+
+## Ввод и ошибки
+
+Сначала программа запрашивает `n`, затем `n` элементов массива. Допустимо
+`2 ≤ n ≤ 99999`; элементы должны помещаться в Java int.
+Числа можно разделять пробелами, переводами строк или табуляцией.
+
+- Задачи 2, 3, 4, 41 дополнительно запрашивают `x`.
+- Задача 10 запрашивает ненулевое `k`.
+- Задача 38 запрашивает сдвиг `k`; полные обороты отбрасываются, отрицательный сдвиг означает движение вправо.
+- Задача 12 запрашивает сумму `s` типа long.
+
+Программы печатают подсказки, а затем ответ. При нечисловом значении, выходе за диапазон
+типа или окончании ввода до получения всех чисел выводится `Ошибка: должно быть целое число!`.
+Неверный размер массива и нулевой делитель также сопровождаются понятным сообщением.
+
+Пример ввода с ошибкой:
 
 ```text
-4
-1 2 3 4
-5
+Введите длину массива
+abc
+Ошибка: должно быть целое число!
 ```
 
-Ответ: `0 3`. Хотя существует пара `1 2`, сначала нужно минимизировать первый индекс.
-Можно перенаправить файл: `java -cp target/classes ru.bmstu.lab1.task_12.Task12 < input.txt`.
+Для ввода с клавиатуры отсутствие следующего числа означает ожидание ввода.
+Ошибка о недостающем числе возникает при окончании потока, например в неполном файле.
 
-## Единый формат ввода
+Сохраняются гарантии задания: в задаче 6 сумма делится на n, в задаче 7 все элементы
+различны. Методы `solve` рассчитаны на допустимые данные; null и пустой входной массив
+не предусмотрены. Задачи 37 и 38 изменяют массив на месте, остальные его сохраняют.
 
-1. Размер `n`, где `2 ≤ n ≤ 99999`.
-2. Ровно `n` целых чисел в диапазоне Java `int`.
-3. Для задач 2, 3, 4, 41 — `x`; для задачи 10 — ненулевое `k`; для задачи 38 — сдвиг `k`;
-   для задачи 12 — сумма `s`.
+Результаты-массивы печатаются через пробел. Пустой результат в задачах 4 и 41 — пустая
+строка после подсказок. В задаче 8 выводятся две строки: положительные, затем отрицательные.
 
-Числа разделяются пробелами, переводами строк или табуляцией. Номер задачи во вводе
-не указывается: он выбирается запускаемым классом. Программы печатают только ответ,
-без приглашений ко вводу. В задаче 12 сумма читается как `long`, чтобы поддержать
-суммы двух крайних значений `int`.
+## Отчёты
 
-| Задача | Ответ |
-|---|---|
-| 1 | Минимум, затем максимум через пробел |
-| 2 | Первый индекс или `-1` |
-| 3 | Количество вхождений |
-| 4 | Индексы через пробел; если совпадений нет — пустая строка |
-| 5 | Сумма на индексах 0, 2, 4, … |
-| 6 | Количество элементов строго выше среднего |
-| 7 | Второй максимум |
-| 8 | Первая строка — положительные, вторая — отрицательные; пустая группа — пустая строка |
-| 9 | `YES` или `NO` |
-| 10 | Последний подходящий индекс или `-1` |
-| 11 | Значение ближайшего элемента, а не индекс |
-| 12 | Два индекса через пробел или `-1 -1` |
-| 25 | Сумма всех элементов в long |
-| 26 | Неотрицательный остаток произведения по модулю 1000000007 |
-| 36 | Накопленные суммы через пробел, значения имеют тип long |
-| 37 | Развёрнутый массив через пробел |
-| 38 | Массив после сдвига влево на k позиций |
-| 41 | Массив без x через пробел; пустой результат — пустая строка |
+- [report.md](report.md) — общий отчёт по 18 задачам.
+- [complexity.md](complexity.md) — расчёт времени и памяти.
+- [verification.md](verification.md) — результаты проверки.
 
-В задаче 6 используются гарантии условия: сумма делится на `n`. В задаче 7 все
-элементы различны. Методы `solve` рассчитаны на допустимые входные данные из условия;
-задачи 37 и 38 изменяют переданный массив на месте, остальные сохраняют его.
-Пустые входные массивы и `null` условием не предусмотрены. В задаче 38 полные обороты
-отбрасываются; отрицательный k трактуется как сдвиг вправо.
-
-## Что важно понять перед защитой
-
-- Чем индекс отличается от значения: в задаче 5 проверяется чётность **индекса**.
-- Почему суммы считаются в `long`: даже два больших `int` могут переполнить `int`.
-- Почему второй максимум сначала берётся из двух настоящих элементов, а не из нуля.
-- Почему в задаче 11 используется строгое сравнение `<`: при равенстве остаётся первый элемент.
-- Почему в задаче 12 недостаточно вернуть первую случайно найденную пару.
-- Почему в задаче 26 остаток берётся после каждого умножения.
-- Как три разворота в задаче 38 превращают части A + B в B + A.
-- Что означают `O(n)` и `O(n log n)` и где выделяются дополнительные массивы.
-
-Подробные объяснения находятся в `report.md` и `complexity.md`.
-
-Из корня репозитория также можно проверить только этот модуль командой
-`mvn -pl 31-Fedyuk clean verify` с JDK 21 или новее.
+После изменения оформления прошли **299 тестов**, покрытие строк и ветвей — **100%**.
